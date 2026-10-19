@@ -1,81 +1,151 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#08090c">
-  <meta name="description" content="Underground Empire — music, videos, photos and underground culture.">
-  <title>Underground Empire | Official</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Underground Empire | Bohee Vexer & Flexer</title>
+<style>
+:root{--red:#ed1235;--bg:#080a0e;--panel:#101319;--line:#252a33;--muted:#9ba0aa;--white:#f4f5f7}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--white);font-family:Arial,Helvetica,sans-serif;font-size:14px}
+a{color:inherit;text-decoration:none}
+header{position:sticky;top:0;z-index:5;background:#080a0ef2;border-bottom:1px solid #24262b}
+.nav{max-width:1200px;margin:auto;display:flex;align-items:center;gap:20px;padding:14px 22px}
+.brand{display:flex;align-items:center;gap:9px;min-width:220px}
+.fist{font-size:29px;color:var(--red)}
+.brand strong{font-size:13px;letter-spacing:-.5px}
+.brand strong span{color:var(--red);font-style:italic}
+.brand small{display:block;color:#c1c4cb;font-size:9px;letter-spacing:2px;margin-top:4px}
+nav{display:flex;align-items:center;gap:22px;flex:1;font-size:11px;color:#c6c8ce}
+nav a:hover,.active{color:var(--red)}
+.search{width:150px;background:#101319;border:1px solid #272c35;border-radius:7px;padding:10px;color:white}
+.login{border:1px solid var(--red);border-radius:6px;padding:10px 12px;color:var(--red);white-space:nowrap;font-size:11px}
+.hero{min-height:390px;position:relative;overflow:hidden;display:flex;align-items:center;background:linear-gradient(90deg,#050609 0%,#08090dcc 48%,#05060925 100%),url('https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=1800&q=85') center/cover}
+.hero:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 75% 40%,#ed123533,transparent 34%),linear-gradient(0deg,#080a0e 0%,transparent 24%)}
+.hero-inner{position:relative;z-index:1;max-width:1200px;width:100%;margin:auto;padding:48px 7%}
+.crown{font-size:75px;color:var(--red);line-height:.8;margin-left:120px;text-shadow:0 0 18px #ed123555}
+.hero h1{font-size:clamp(38px,7vw,82px);line-height:.85;margin:10px 0 5px;font-weight:1000;letter-spacing:-4px;text-transform:uppercase;text-shadow:3px 4px #161616}
+.hero h1 span{display:block;color:var(--red);font-style:italic}
+.hero .artist{font-size:clamp(18px,3vw,27px);font-style:italic;margin:10px 0 22px}
+.hero p{color:#c6c6ca;letter-spacing:3px;font-size:10px}
+.quick{max-width:1200px;margin:auto;padding:20px 5%;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;border-bottom:1px solid #20242b}
+.quick a{display:flex;align-items:center;gap:15px;background:#0d1015;border:1px solid #272c35;border-radius:6px;padding:17px}
+.quick .symbol{color:var(--red);font-size:21px}
+.quick b{font-size:12px}
+.quick small{display:block;color:var(--muted);font-size:10px;margin-top:4px}
+section.gallery{max-width:1200px;margin:auto;padding:27px 4% 24px;border-bottom:1px solid #1b1e25}
+.section-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+.section-head h2{font-size:16px;margin:0}
+.section-head h2 span{color:var(--red);margin-right:8px}
+.section-head a{font-size:11px;color:var(--red)}
+.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.card{min-width:0}
+.cover{aspect-ratio:1/1;position:relative;border:1px solid #272c35;border-radius:5px;overflow:hidden;background:#111}
+.cover img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}
+.card:hover .cover img{transform:scale(1.04)}
+.cover .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:44px;height:44px;border-radius:50%;background:#080a0edb;border:1px solid #777;display:grid;place-items:center;font-size:17px}
+.card h3{font-size:11px;margin:8px 0 4px}
+.card p{font-size:10px;color:var(--muted);margin:0 0 7px}
+footer{max-width:1200px;margin:auto;padding:30px 4% 38px;display:flex;align-items:center;justify-content:space-between;gap:20px;color:#b4b7c0;font-size:11px}
+footer .quote{text-align:center;line-height:1.7}
+footer .copy{text-align:center;color:#858a94;font-size:10px;margin-top:18px}
+.social{display:flex;gap:13px}
+@media(max-width:700px){
+ .nav{padding:10px 12px;gap:10px;flex-wrap:wrap}
+ .brand{min-width:0;flex:1}
+ .brand strong{font-size:11px}
+ nav{order:3;width:100%;flex-basis:100%;justify-content:space-between;gap:8px;padding:8px 0 2px;font-size:10px}
+ .search{display:none}
+ .login{font-size:10px;padding:8px}
+ .hero{min-height:310px;background-position:center}
+ .hero-inner{padding:38px 7%}
+ .crown{font-size:54px;margin-left:80px}
+ .hero h1{letter-spacing:-2px}
+ .hero p{letter-spacing:1.5px}
+ .quick{padding:12px;gap:8px}
+ .quick a{padding:10px 8px;gap:7px}
+ .quick .symbol{font-size:17px}
+ .quick b{font-size:9px}
+ .quick small{font-size:8px}
+ section.gallery{padding:22px 4%}
+ .cards{gap:12px 10px;grid-template-columns:repeat(4,minmax(0,1fr))}
+ .card h3{font-size:9px}
+ .card p{font-size:8px}
+ .cover .play{width:34px;height:34px}
+ footer{padding:24px 4%;flex-wrap:wrap;justify-content:space-between}
+ footer .quote{order:3;width:100%}
+ .social{gap:8px}
+}
+@media(max-width:420px){
+ .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .quick small{display:none}
+ .hero h1{font-size:39px}
+ .quick a{justify-content:center}
+ .quick a>div:last-child{text-align:left}
+}
+</style>
 </head>
 <body>
-<header class="topbar">
-  <a class="brand" href="#" aria-label="Underground Empire home"><span class="crown">♛</span><span>UNDERGROUND <b>EMPIRE</b><small>BOHEE VEXER & FLEXER</small></span></a>
+<header>
+ <div class="nav">
+  <a class="brand" href="#home"><span class="fist">✊</span><strong>UNDERGROUND <span>EMPIRE</span><small>BOHEE VEXER &amp; FLEXER</small></strong></a>
   <nav><a class="active" href="#home">⌂ Home</a><a href="#songs">♫ MP3 Songs</a><a href="#videos">▣ Videos</a><a href="#photos">▧ Photos</a></nav>
-  <div class="top-actions"><input id="search" type="search" placeholder="Search music..." aria-label="Search media"><button class="outline-btn" id="loginOpen">♟ Admin Login</button><button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button></div>
+  <input class="search" id="search" placeholder="Search music..." aria-label="Search music">
+  <a class="login" href="#admin">♟ Admin Login</a>
+ </div>
 </header>
-
 <main id="home">
-  <section class="hero">
-    <div class="hero-shade"></div>
-    <div class="hero-copy"><div class="hero-crown">♛</div><p class="eyebrow">REAL MUSIC · REAL VIBES · NO LIMITS</p><h1>UNDERGROUND<br><em>EMPIRE</em></h1><p class="hero-sub">Bohee Vexer & Flexer</p><div class="hero-links">MUSIC <i>/</i> VIDEOS <i>/</i> PHOTOS <i>/</i> UNDERGROUND CULTURE</div></div>
-    <div class="hero-side">SUPPORT<br>UNDERGROUND<br>ARTISTS</div>
-  </section>
-
-  <section class="quick-links">
-    <a href="#songs" class="quick-card"><span class="quick-icon">♫</span><span><b>MP3 SONGS</b><small>Latest & trending songs</small></span><strong>→</strong></a>
-    <a href="#videos" class="quick-card"><span class="quick-icon">▶</span><span><b>VIDEOS</b><small>Music videos & more</small></span><strong>→</strong></a>
-    <a href="#photos" class="quick-card"><span class="quick-icon">▧</span><span><b>PHOTOS</b><small>Exclusive gallery</small></span><strong>→</strong></a>
-  </section>
-
-  <section class="content-section" id="songs">
-    <div class="section-head"><h2><span>♫</span> Latest MP3 Songs</h2><button class="text-btn" data-view="songs">View all →</button></div>
-    <div class="media-grid song-grid" id="songGrid"></div>
-  </section>
-  <section class="content-section" id="videos">
-    <div class="section-head"><h2><span>▶</span> Latest Videos</h2><button class="text-btn" data-view="videos">View all →</button></div>
-    <div class="media-grid video-grid" id="videoGrid"></div>
-  </section>
-  <section class="content-section" id="photos">
-    <div class="section-head"><h2><span>▧</span> Latest Photos</h2><button class="text-btn" data-view="photos">View all →</button></div>
-    <div class="media-grid photo-grid" id="photoGrid"></div>
-  </section>
-  <section class="empty-state hidden" id="emptyState">No media found. Try another search.</section>
+ <section class="hero">
+  <div class="hero-inner">
+   <div class="crown">♛</div>
+   <h1>Underground <span>Empire</span></h1>
+   <div class="artist">Bohee Vexer &amp; Flexer</div>
+   <p>NO LIMITS · UNDERGROUND CULTURE</p>
+  </div>
+ </section>
+ <div class="quick">
+  <a href="#songs"><span class="symbol">♫</span><div><b>MP3 SONGS</b><small>Latest &amp; trending songs</small></div><span style="margin-left:auto">→</span></a>
+  <a href="#videos"><span class="symbol">▶</span><div><b>VIDEOS</b><small>Music videos &amp; more</small></div><span style="margin-left:auto">→</span></a>
+  <a href="#photos"><span class="symbol">▧</span><div><b>PHOTOS</b><small>Exclusive gallery</small></div><span style="margin-left:auto">→</span></a>
+ </div>
+ <section class="gallery" id="songs">
+  <div class="section-head"><h2><span>♫</span>Latest MP3 Songs</h2><a href="#songs">View all →</a></div>
+  <div class="cards">
+   <article class="card"><div class="cover"><img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=600&q=80" alt="Dark city artwork"></div><h3>Dark Side</h3><p>Bohee Vexer</p><p>Preview artwork</p></article>
+   <article class="card"><div class="cover"><img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=600&q=80" alt="Underground artwork"></div><h3>Underground</h3><p>Flexer</p><p>Preview artwork</p></article>
+   <article class="card"><div class="cover"><img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=600&q=80" alt="Real Ones artwork"></div><h3>Real Ones</h3><p>Bohee Vexer &amp; Flexer</p><p>Preview artwork</p></article>
+   <article class="card"><div class="cover"><img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=600&q=80" alt="No Limits artwork"></div><h3>No Limits</h3><p>Flexer</p><p>Preview artwork</p></article>
+  </div>
+ </section>
+ <section class="gallery" id="videos">
+  <div class="section-head"><h2><span>▶</span>Latest Videos</h2><a href="#videos">View all →</a></div>
+  <div class="cards">
+   <article class="card"><div class="cover"><img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=600&q=80" alt="Underground Empire video thumbnail"><span class="play">▶</span></div><h3>Underground Empire</h3><p>Official Video</p><p>Preview artwork</p></article>
+   <article class="card"><div class="cover"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=600&q=80" alt="No Limits desert road"><span class="play">▶</span></div><h3>No Limits</h3><p>Official Video</p><p>Preview artwork</p></article>
+   <article class="card"><div class="cover"><img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=600&q=80" alt="Dark Side video thumbnail"><span class="play">▶</span></div><h3>Dark Side</h3><p>Official Video</p><p>Preview artwork</p></article>
+   <article class="card"><div class="cover"><img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=600&q=80" alt="Real Ones video thumbnail"><span class="play">▶</span></div><h3>Real Ones</h3><p>Official Video</p><p>Preview artwork</p></article>
+  </div>
+ </section>
+ <section class="gallery" id="photos">
+  <div class="section-head"><h2><span>▧</span>Latest Photos</h2><a href="#photos">View all →</a></div>
+  <div class="cards">
+   <article class="card"><div class="cover"><img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=600&q=80" alt="Underground portrait"></div><h3>Underground Portrait</h3><p>Photo Gallery</p><p>Preview artwork</p></article>
+   <article class="card"><div class="cover"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=600&q=80" alt="City Nights"></div><h3>City Nights</h3><p>Photo Gallery</p><p>Preview artwork</p></article>
+   <article class="card"><div class="cover"><img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=600&q=80" alt="Studio microphone"></div><h3>Studio Life</h3><p>Photo Gallery</p><p>Preview artwork</p></article>
+   <article class="card"><div class="cover"><img src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=600&q=80" alt="Live crowd"></div><h3>Live Crowd</h3><p>Photo Gallery</p><p>Preview artwork</p></article>
+  </div>
+ </section>
 </main>
-
-<footer class="footer">
-  <a class="brand footer-brand" href="#"><span class="crown">♛</span><span>UNDERGROUND <b>EMPIRE</b><small>Bohee Vexer & Flexer</small></span></a>
-  <p>“Music is not just sound,<br>it’s a lifestyle.”</p>
-  <div class="socials"><a href="#" aria-label="YouTube">▶</a><a href="#" aria-label="Instagram">◎</a><a href="#" aria-label="Facebook">f</a><a href="#" aria-label="TikTok">♪</a></div>
-  <small>© <span id="year"></span> Underground Empire. All rights reserved.</small>
+<footer>
+ <a class="brand" href="#home"><span class="fist">✊</span><strong>UNDERGROUND <span>EMPIRE</span><small>BOHEE VEXER &amp; FLEXER</small></strong></a>
+ <div class="quote">“Music is not just sound,<br>it's a lifestyle.”<div class="copy">© 2026 Underground Empire. All rights reserved.</div></div>
+ <div class="social"><a href="#videos">▶</a><a href="#photos">●</a><a href="#home">f</a><a href="#home">♪</a></div>
 </footer>
-
-<div class="modal hidden" id="loginModal" role="dialog" aria-modal="true" aria-labelledby="loginTitle">
-  <div class="modal-card"><button class="modal-close" id="loginClose" aria-label="Close">×</button><div class="modal-logo">♛</div><h2 id="loginTitle">ADMIN <em>LOGIN</em></h2><p class="muted">Manage your Underground Empire media</p>
-    <form id="loginForm"><label for="username">Username / Email</label><input id="username" autocomplete="username" required placeholder="Admin username"><label for="password">Password</label><input id="password" type="password" autocomplete="current-password" required placeholder="Enter password"><button class="primary-btn full" type="submit">Login to dashboard</button><p class="form-message" id="loginMessage"></p></form>
-    <p class="demo-note" id="demoNote">Demo preview login: <b>admin</b> / <b>Empire@2026</b></p>
-  </div>
-</div>
-
-<div class="admin-panel hidden" id="adminPanel">
-  <div class="admin-head"><div><span class="status-dot"></span> ADMIN PANEL <small>Underground Empire</small></div><button id="logoutBtn" class="outline-btn">Logout ↗</button></div>
-  <div class="admin-body"><div><h2>Upload Media</h2><p class="muted">Add a song, video, or photo to your website.</p>
-    <form id="uploadForm" class="upload-form">
-      <label for="mediaType">Media type</label><select id="mediaType"><option value="songs">MP3 Song</option><option value="videos">Video</option><option value="photos">Photo</option></select>
-      <label for="mediaTitle">Title</label><input id="mediaTitle" required maxlength="90" placeholder="e.g. Dark Side">
-      <label for="artist">Artist / Description</label><input id="artist" maxlength="90" placeholder="e.g. Bohee Vexer">
-      <label for="mediaFile">Choose file</label><input id="mediaFile" type="file" required accept=".mp3,.wav,.m4a,.mp4,.webm,.mov,.jpg,.jpeg,.png,.webp">
-      <label for="coverFile">Cover image (optional)</label><input id="coverFile" type="file" accept="image/png,image/jpeg,image/webp">
-      <button class="primary-btn full" type="submit">＋ Upload Media</button><p class="form-message" id="uploadMessage"></p>
-    </form></div>
-    <div><h2>Manage Media</h2><p class="muted">Delete demo uploads or media stored in your connected backend.</p><div id="manageList" class="manage-list"></div></div>
-  </div>
-  <div class="storage-warning" id="storageWarning">Demo mode: files are saved only in this browser. Connect Supabase for shared, permanent online uploads.</div>
-</div>
-<div class="toast hidden" id="toast"></div>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="app.js"></script>
+<script>
+const search=document.getElementById('search');
+if(search){search.addEventListener('input',()=>{const q=search.value.toLowerCase().trim();document.querySelectorAll('.card').forEach(card=>{card.style.display=card.innerText.toLowerCase().includes(q)?'':'none';});});}
+</script>
 </body>
 </html>
