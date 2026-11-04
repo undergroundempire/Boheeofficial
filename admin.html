@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>BOHEE OFFICIAL — Admin</title><link rel="stylesheet" href="style.css">
+</head>
+<body class="admin-body">
+  <main class="admin-shell">
+    <a href="index.html" class="back-link">← Public website</a>
+    <h1>BOHEE <span>ADMIN</span></h1>
+    <p class="muted">Sign in with your authorised Firebase admin account.</p>
+    <section id="loginPanel" class="admin-panel">
+      <label>Email<input id="adminEmail" type="email" autocomplete="username"></label>
+      <label>Password<input id="adminPassword" type="password" autocomplete="current-password"></label>
+      <button id="loginBtn" class="gold-btn">Admin Login</button>
+      <p id="adminMessage" class="muted"></p>
+    </section>
+    <section id="dashboard" class="admin-panel hidden">
+      <div class="dashboard-head"><h2>Website Settings</h2><button id="logoutBtn">Log out</button></div>
+      <label class="switch-line"><input id="siteEnabled" type="checkbox" checked> Website ON (turn OFF to show offline screen)</label>
+      <button id="saveSettings" class="gold-btn">Save Website Status</button>
+      <hr>
+      <h2>Upload / Replace QR Picture</h2>
+      <input id="qrUpload" type="file" accept="image/*">
+      <button id="uploadQr" class="gold-btn">Upload Paytm QR</button>
+      <p class="muted">QR file will be stored in Firebase Storage. Configure Firebase first.</p>
+      <hr>
+      <h2>Upload music</h2>
+      <input id="musicUpload" type="file" accept="audio/*">
+      <p class="muted">Music publishing and other media tools will be connected after Firebase setup.</p>
+    </section>
+    <p class="admin-warning">Security note: do not publish Firebase service-account keys in this folder. Admin access must be restricted using Firebase Authentication and Firestore/Storage Rules.</p>
+  </main>
+  <script type="module" src="admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080808">
+  <meta name="description" content="BOHEE OFFICIAL — Real music. Real vibes.">
+  <title>BOHEE OFFICIAL</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- INTRO OVERLAY -->
+  <section id="intro" class="intro">
+    <img class="intro-photo" src="images/Boheeintropic.png" alt="Bohee intro portrait">
+    <div class="intro-shade"></div>
+    <div class="intro-content">
+      <div id="signature" class="signature">Boheeofficial</div>
+      <button id="enterBtn" class="enter-btn">ENTER</button>
+    </div>
+    <button id="skipIntro" class="skip-btn">Skip Intro</button>
+  </section>
+
+  <!-- OFFLINE SCREEN -->
+  <section id="offlineScreen" class="offline hidden">
+    <h1>BOHEE OFFICIAL</h1>
+    <p>BOHEE OFFICIAL is temporarily offline. We’ll be back soon.</p>
+  </section>
+
+  <!-- MAIN WEBSITE -->
+  <main id="site" class="site hidden">
+    <header class="topbar">
+      <a class="wordmark" href="#home">BOHEE <span>OFFICIAL</span></a>
+      <nav>
+        <a href="#music">Music</a><a href="#videos">Videos</a><a href="#gallery">Gallery</a>
+        <a href="#upcoming">Upcoming</a>
+      </nav>
+      <div class="top-actions">
+        <button id="themeToggle" class="theme-toggle" aria-label="Switch day or night">☾</button>
+        <a class="admin-link" href="admin.html">Admin Login</a>
+      </div>
+    </header>
+
+    <section id="home" class="hero">
+      <img src="images/boheebanner.png" alt="Bohee Official banner" class="hero-photo">
+      <div class="hero-overlay"></div>
+      <div class="hero-copy">
+        <p class="eyebrow">REAL MUSIC · REAL VIBES</p>
+        <h1>BOHEE <span>OFFICIAL</span></h1>
+        <p>WELCOME TO THE OFFICIAL MUSIC WORLD</p>
+      </div>
+    </section>
+
+    <section class="search-wrap">
+      <form id="searchForm" class="search-box">
+        <input id="siteSearch" type="search" placeholder="Search songs, videos, photos..." aria-label="Search website">
+        <button type="submit" aria-label="Search">⌕</button>
+        <button type="button" id="voiceSearch" aria-label="Voice search">🎙</button>
+      </form>
+      <p id="searchStatus" class="muted"></p>
+    </section>
+
+    <section id="music" class="section">
+      <div class="section-heading"><p class="eyebrow">LISTEN NOW</p><h2>Latest Music</h2></div>
+      <div id="musicList" class="content-grid">
+        <article class="tile"><div class="cover-placeholder">♫</div><h3>Music coming soon</h3><p>Add songs from Admin Login.</p></article>
+      </div>
+    </section>
+
+    <section id="videos" class="section">
+      <div class="section-heading"><p class="eyebrow">WATCH</p><h2>Official Videos</h2></div>
+      <div id="videoList" class="content-grid"><article class="tile"><h3>Videos coming soon</h3></article></div>
+    </section>
+
+    <section id="gallery" class="section">
+      <div class="section-heading"><p class="eyebrow">MOMENTS</p><h2>Photo Gallery</h2></div>
+      <div id="galleryList" class="gallery-grid">
+        <img src="images/gallery-1.jpg" alt="Bohee gallery photo 1">
+        <img src="images/gallery-2.jpg" alt="Bohee gallery photo 2">
+        <img src="images/gallery-3.jpg" alt="Bohee gallery photo 3">
+      </div>
+    </section>
+
+    <section id="upcoming" class="section upcoming">
+      <p class="eyebrow">COMING NEXT</p><h2>Upcoming Release</h2>
+      <p>New music is on the way.</p>
+      <div id="countdown" class="countdown">STAY TUNED</div>
+    </section>
+
+    <section class="support">
+      <button id="coinBtn" class="coin-btn" aria-label="Support Bohee">₹</button>
+      <p>SUPPORT BOHEE</p>
+    </section>
+
+    <footer class="footer">
+      <div class="socials">
+        <a href="https://youtube.com/@boheeofficial" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://facebook.com/" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://open.spotify.com/artist/4DmqbiUFrK0QehFuaCbHlI" target="_blank" rel="noopener">Spotify</a>
+      </div>
+      <p>© 2026 BOHEE OFFICIAL · ALL RIGHTS RESERVED</p>
+    </footer>
+  </main>
+
+  <!-- PAYTM QR POPUP -->
+  <div id="qrModal" class="modal hidden" role="dialog" aria-modal="true" aria-label="Paytm QR">
+    <div class="modal-card">
+      <button id="closeQr" class="modal-close" aria-label="Close">×</button>
+      <h2>SUPPORT BOHEE</h2>
+      <img src="images/paytm-qr.png" alt="Paytm QR scanner" class="qr-image">
+      <p>Scan with Paytm or a supported UPI app</p>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
